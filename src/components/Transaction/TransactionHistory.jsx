@@ -1,20 +1,21 @@
-import React from "react";
-import PropTypes from "prop-types";
-import TransactionItem from "./TransactionItem";
+import React from 'react';
+import PropTypes from 'prop-types';
+import TransactionItem from './TransactionItem';
+import style from './Transaction.module.css';
 
 function TransactionHistory({ items }) {
   return (
-    <table class="transaction-history">
-      <thead>
+    <table className={style.transactionHistory}>
+      <thead className={style.transactionHistory_head}>
         <tr>
-          <th>Type</th>
-          <th>Amount</th>
-          <th>Currency</th>
+          <th className={style.transactionHistory_head_th}>Type</th>
+          <th className={style.transactionHistory_head_th}>Amount</th>
+          <th className={style.transactionHistory_head_th}>Currency</th>
         </tr>
       </thead>
 
       <tbody>
-        {items.map((item) => (
+        {items.map(item => (
           <TransactionItem
             key={item.id}
             type={item.type}

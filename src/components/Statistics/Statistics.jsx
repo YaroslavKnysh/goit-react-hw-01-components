@@ -1,13 +1,16 @@
-import React from "react";
-import PropTypes from "prop-types";
-import StatistiscItem from "./StatisticsItem";
+import React from 'react';
+import PropTypes from 'prop-types';
+import StatistiscItem from './StatisticsItem';
+import style from './Statistics.module.css';
 
 function Statistic({ stats }) {
   return (
-    <section class="statistics">
-      {stats.title !== undefined && <h2 class="title">Upload stats</h2>}
-      <ul class="stat-list">
-        {stats.map((el) => (
+    <section className={style.statistics}>
+      {stats.title !== undefined && (
+        <h2 className={style.title}>Upload stats</h2>
+      )}
+      <ul className={style.statList}>
+        {stats.map(el => (
           <StatistiscItem
             key={el.id}
             label={el.label}

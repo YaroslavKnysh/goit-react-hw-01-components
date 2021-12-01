@@ -1,11 +1,23 @@
-import PropTypes from "prop-types";
-import React from "react";
+import PropTypes from 'prop-types';
+import React from 'react';
+import style from './Statistics.module.css';
+
+function randomCount(max) {
+  return Math.floor(Math.random() * max);
+}
 
 function StatisticsItem({ label, percentage }) {
   return (
-    <li class="item">
-      <span class="label">{label}</span>
-      <span class="percentage">{percentage}</span>
+    <li
+      style={{
+        backgroundColor: `rgb(${randomCount(256)}, ${randomCount(
+          256,
+        )}, ${randomCount(256)})`,
+      }}
+      className={style.item}
+    >
+      <span className={style.label}>{label}</span>
+      <span className={style.percentage}>{percentage}%</span>
     </li>
   );
 }
