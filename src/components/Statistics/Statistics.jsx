@@ -6,7 +6,7 @@ import style from './Statistics.module.css';
 function Statistic({ stats }) {
   return (
     <section className={style.statistics}>
-      {stats.title !== undefined && (
+      {stats.title && (
         <h2 className={style.title}>Upload stats</h2>
       )}
       <ul className={style.statList}>
